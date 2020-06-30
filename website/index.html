@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Funtime App</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+
+  <script id="thingsToDoTemplate" type="x-tmpl-mustache">
+    <li>{{task}}</li>
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Lets Have Fun</h1>
+  </header>
+  <main>
+    <h2>Stuff To Do</h2>
+    <ul id="things"></ul>
+  </main>
+  <footer>&copy; 2020 John and the 301 Gang</footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="/js/app.js"></script>
+</body>
+
+</html>
