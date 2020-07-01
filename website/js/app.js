@@ -12,7 +12,7 @@ function renderThings(list) {
 function showThingsToDo() {
 
   //ajax call here:
-  $.ajax('http://localhost3000/todo')
+  $.ajax('http://localhost:3000/todo')
     .then (stuff => {
       renderThings(stuff)
     });
