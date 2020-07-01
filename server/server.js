@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 // Dependencies
 const express = require('express');
 const cors = require('cors');
@@ -7,6 +9,8 @@ const cors = require('cors');
 // Initialize the App
 const app = express();
 app.use(cors());
+
+const client = new pg.Client(process.env.DATABASE_URL);
 
 // Global Variables
 const PORT = 3000;
@@ -16,6 +20,10 @@ app.get('/todo', handleToDo);
 
 // Route Handlers
 function handleToDo(request, response) {
+  //get from DB
+  //install pg and add to .env
+  //initialize SQL client connection
+  //connect to DB
 
   let thingsToDo = [
     { task: 'watch tv' },
@@ -30,5 +38,9 @@ function handleToDo(request, response) {
 }
 
 // Go!
-  app.listen(PORT, () => console.log('Server is running'));
+client.connect()
+  .then (() => {
+    app.listen(PORT, () => console.log('Server is running'));
+
+  })
 
